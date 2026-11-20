@@ -8,7 +8,7 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 | --- | --- |
 | Konsep | Satu halaman berisi kartu-kartu project. Tiap kartu menunjukkan apa yang tersedia: website live, video, dan/atau screenshot |
 | Teknologi | React + Vite |
-| Deploy | Vercel atau Netlify (langkahnya ada di `README.md`) |
+| Deploy | Uji coba dulu di GitHub Pages, kalau sudah oke baru ke Vercel (langkahnya ada di `README.md`) |
 | Video | Di-host di YouTube (boleh Unlisted, opsi "Allow embedding" harus aktif), lalu diputar langsung di popup |
 | Bahasa | Dua bahasa, Indonesia & Inggris, dengan tombol ganti ID/EN |
 | Data | Sementara pakai 6 project contoh, nanti diganti dengan project asli |
@@ -39,6 +39,11 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 - Mode terang pakai latar krem; teks kuning digelapkan jadi kuning tua (`#a16207`)
 - Mode gelap pakai hitam yang sedikit hangat
 
+### Tahap 3: Deploy uji coba ke GitHub Pages
+- Workflow GitHub Actions untuk build & deploy ke `https://2013tib-droid.github.io/Portofolio-pojectku/`
+- Path dasar (`base`) Vite bisa diatur lewat `BASE_PATH`; default `/` supaya Vercel tetap jalan tanpa diubah
+- Path screenshot lokal otomatis diberi awalan base URL, jadi tetap muncul di sub-folder
+
 ## Yang masih perlu dikerjakan
 
 - [ ] Isi data diri di `src/data/profile.js` (nama, bio, email, GitHub, LinkedIn)
@@ -46,7 +51,8 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 - [ ] Taruh screenshot asli di `public/screenshots/`, lalu hapus gambar contoh (`*.svg`)
 - [ ] Upload video demo ke YouTube dan masukkan link-nya (video sekarang masih placeholder Big Buck Bunny)
 - [ ] Ganti link `https://example.com` dengan link website asli
-- [ ] Deploy ke Vercel atau Netlify
+- [ ] Aktifkan GitHub Pages (Source: GitHub Actions) & izinkan branch di environment `github-pages`
+- [ ] Kalau sudah oke di GitHub Pages, deploy ke Vercel
 - [ ] Cek pemutaran video YouTube langsung di browser (belum bisa dicek dari sandbox)
 
 ## Lokasi file penting
@@ -66,3 +72,4 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 | --- | --- |
 | 20 Nov 2026 | Halaman portofolio dibuat (React + Vite, dua bahasa, data contoh) |
 | 20 Nov 2026 | Tema diganti jadi dominan kuning |
+| 20 Nov 2026 | Setup deploy uji coba ke GitHub Pages |
