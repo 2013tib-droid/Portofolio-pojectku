@@ -57,7 +57,7 @@ Gambar pertama dipakai sebagai thumbnail kartu. Kalau tidak ada screenshot tapi 
 
 Upload video ke YouTube (boleh **Unlisted** supaya tidak muncul di pencarian YouTube, tapi tetap bisa diputar di portofolio). Pastikan opsi **"Allow embedding"** aktif. Format link yang didukung: `youtube.com/watch?v=…`, `youtu.be/…`, `youtube.com/shorts/…` (video vertikal otomatis ditampilkan tegak).
 
-> Project contoh memakai video publik *Big Buck Bunny* dan `https://example.com` sebagai placeholder, serta screenshot ilustrasi di `public/screenshots/*.svg`. Hapus atau ganti semuanya dengan milikmu.
+> Screenshot di `public/screenshots/*.webp` diambil dari tampilan asli tiap project. Ganti kalau tampilannya berubah.
 
 ## Deploy
 

@@ -13,18 +13,18 @@ const profile = {
   photo: '',
   // Judul besar di hero. Tulis apa yang kamu bikin dan untuk siapa, bukan slogan.
   headline: {
-    id: 'Aku bikin aplikasi kasir, absensi, dan web toko untuk usaha kecil dan sekolah.',
-    en: 'I build point of sale, attendance, and storefront apps for small businesses and schools.',
+    id: 'Aku bikin game edukasi anak, dashboard saham, dan alat otomasi yang jalan sendiri tiap hari.',
+    en: 'I build educational games for kids, stock market dashboards, and automations that run on their own every day.',
   },
   // Satu atau dua kalimat: bagian mana yang kamu kerjakan dan bukti singkatnya.
   bio: {
-    id: 'Aku pegang dari tampilan sampai server dan database, lalu memastikan semuanya lancar dipakai di HP. Project di bawah bisa dicoba langsung atau ditonton video demonya.',
-    en: 'I handle everything from the interface to the server and database, and make sure it runs smoothly on phones. You can try the projects below or watch their demo videos.',
+    id: 'Aku pegang dari tampilan sampai server dan data. Sebagian besar project di bawah bisa langsung dibuka, datanya diperbarui otomatis, dan kodenya terbuka di GitHub.',
+    en: 'I handle everything from the interface to the server and data. Most projects below are live, update their data automatically, and have open source code on GitHub.',
   },
   // Kosongkan ('') link yang tidak dipakai, nanti otomatis tidak ditampilkan.
   links: {
     email: 'kamu@email.com',
-    github: 'https://github.com/username',
+    github: 'https://github.com/2013tib-droid',
     linkedin: 'https://www.linkedin.com/in/username',
     instagram: '',
   },

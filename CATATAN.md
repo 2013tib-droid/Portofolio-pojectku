@@ -11,7 +11,7 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 | Deploy | Uji coba dulu di GitHub Pages (sudah online), kalau sudah oke baru ke Vercel (langkahnya ada di `README.md`) |
 | Video | Di-host di YouTube (boleh Unlisted, opsi "Allow embedding" harus aktif), lalu diputar langsung di popup |
 | Bahasa | Dua bahasa, Indonesia & Inggris, dengan tombol ganti ID/EN |
-| Data | Sementara pakai 6 project contoh, nanti diganti dengan project asli |
+| Data | 10 project asli dari repo GitHub publik (`belajar-primeng` sengaja tidak dimasukkan) |
 
 ## Yang sudah dibuat
 
@@ -73,16 +73,23 @@ Kalau mau deploy dari branch lain, branch itu juga harus ditambahkan di Environm
 
 ## Yang masih perlu dikerjakan
 
-- [ ] Isi data diri di `src/data/profile.js` (nama, foto, judul, bio, email, GitHub, LinkedIn)
-- [ ] Ganti `role` dan `result` contoh di tiap project dengan yang asli (angka sekarang karangan, jangan sampai tayang)
-- [ ] Ganti 6 project contoh di `src/data/projects.js` dengan project asli
-- [ ] Taruh screenshot asli di `public/screenshots/`, lalu hapus gambar contoh (`*.svg`)
-- [ ] Upload video demo ke YouTube dan masukkan link-nya (video sekarang masih placeholder Big Buck Bunny)
-- [ ] Ganti link `https://example.com` dengan link website asli
+- [ ] Isi nama, foto, email, dan LinkedIn di `src/data/profile.js` (GitHub sudah diisi)
+- [x] Ganti project contoh dengan 10 project asli
+- [x] Screenshot asli di `public/screenshots/` (contoh `*.svg` sudah dihapus)
+- [ ] Cek `role` dan `result` tiap project sudah sesuai kenyataan
+- [ ] Cek semua link live bisa dibuka. Link diambil dari README dan belum bisa dibuka dari sandbox
+- [ ] Screenshot untuk Motion Studio, SoalSKD, dan Agensi (sekarang masih kotak huruf)
+- [ ] Video demo YouTube (opsional, belum ada project yang punya video)
 - [x] Aktifkan GitHub Pages (Source: GitHub Actions) & izinkan branch di environment `github-pages`
 - [ ] Cek tampilan di https://2013tib-droid.github.io/Portofolio-pojectku/ (HP & laptop)
 - [ ] Kalau sudah oke di GitHub Pages, deploy ke Vercel
 - [ ] Cek pemutaran video YouTube langsung di browser (belum bisa dicek dari sandbox)
+
+### Tahap 5: Project asli
+- 10 kartu dari repo publik: Petualangan Pintar, Sruput Kopi, Screening Saham IDX, US Market Screener, XAUUSD Backtester, WartungKit, Sedekah Subuh, Motion Studio, SoalSKD, Agensi
+- Deskripsi, teknologi, dan angka hasil diambil dari README tiap repo dan dari tampilan halamannya pada 20 Nov 2026
+- Screenshot diambil dari tampilan asli (dashboard dijalankan lokal dengan data di repo). Gambar Petualangan Pintar memakai og-image dari repo-nya
+- Kalimat hero diganti supaya sesuai dengan project asli
 
 ## Lokasi file penting
 
@@ -104,3 +111,5 @@ Kalau mau deploy dari branch lain, branch itu juga harus ditambahkan di Environm
 | 20 Nov 2026 | Setup deploy uji coba ke GitHub Pages |
 | 20 Nov 2026 | GitHub Pages diaktifkan, deploy pertama berhasil |
 | 20 Nov 2026 | Hero dan kartu dibuat lebih konkret, statistik dan semua gradasi dihapus |
+| 20 Nov 2026 | Data contoh diganti 10 project asli + screenshot asli |
+| 20 Nov 2026 | Link Petualangan Pintar jadi petualanganpintar.com, link WartungKit ditambahkan |
