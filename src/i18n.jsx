@@ -30,7 +30,7 @@ export const strings = {
     noMedia: 'Belum ada screenshot atau video untuk project ini.',
     showing: (n, total) => `Menampilkan ${n} dari ${total} project`,
     contactTitle: 'Tertarik kerja sama?',
-    contactText: 'Hubungi aku lewat salah satu kontak di bawah.',
+    contactText: 'Silakan hubungi saya melalui salah satu kontak di bawah.',
     madeWith: 'Dibuat dengan React + Vite',
     switchLang: 'Ganti bahasa',
     switchTheme: 'Ganti tema',
