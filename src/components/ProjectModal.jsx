@@ -146,6 +146,12 @@ export default function ProjectModal({ project, initialTab, onClose }) {
             </div>
           )}
           <p className="modal-text">{pick(project.details) || pick(project.summary)}</p>
+          {project.result && <p className="card-result">{pick(project.result)}</p>}
+          {project.role && (
+            <p className="card-role">
+              {t.myRole}: {pick(project.role)}
+            </p>
+          )}
           <h3 className="modal-subtitle">{t.techUsed}</h3>
           <ul className="tags">
             {project.tech.map((tech) => (

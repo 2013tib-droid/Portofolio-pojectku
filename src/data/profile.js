@@ -9,9 +9,17 @@ const profile = {
     id: 'Web & Mobile Developer',
     en: 'Web & Mobile Developer',
   },
+  // Foto kamu, taruh di folder public/ (mis. '/foto.jpg'). Kosongkan '' kalau belum ada.
+  photo: '',
+  // Judul besar di hero. Tulis apa yang kamu bikin dan untuk siapa, bukan slogan.
+  headline: {
+    id: 'Aku bikin aplikasi kasir, absensi, dan web toko untuk usaha kecil dan sekolah.',
+    en: 'I build point of sale, attendance, and storefront apps for small businesses and schools.',
+  },
+  // Satu atau dua kalimat: bagian mana yang kamu kerjakan dan bukti singkatnya.
   bio: {
-    id: 'Aku suka membangun aplikasi yang memecahkan masalah nyata. Di sini kamu bisa lihat project yang pernah aku kerjakan — coba langsung website-nya, tonton video demonya, atau lihat screenshot-nya.',
-    en: 'I love building apps that solve real problems. Here you can explore the projects I have worked on — try the live websites, watch the demo videos, or browse the screenshots.',
+    id: 'Aku pegang dari tampilan sampai server dan database, lalu memastikan semuanya lancar dipakai di HP. Project di bawah bisa dicoba langsung atau ditonton video demonya.',
+    en: 'I handle everything from the interface to the server and database, and make sure it runs smoothly on phones. You can try the projects below or watch their demo videos.',
   },
   // Kosongkan ('') link yang tidak dipakai, nanti otomatis tidak ditampilkan.
   links: {
