@@ -8,7 +8,9 @@ export default function Hero({ profile, stats }) {
     <section className="hero" id="top">
       <div className="container">
         <p className="kicker">{t.heroKicker} · {pick(profile.role)}</p>
-        <h1 className="hero-title">{profile.name}</h1>
+        <h1 className="hero-title">
+          <span className="highlight">{profile.name}</span>
+        </h1>
         <p className="hero-bio">{pick(profile.bio)}</p>
 
         <dl className="stats">

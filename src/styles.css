@@ -2,22 +2,24 @@
    Warna & ukuran — ubah di sini untuk mengganti tampilan
    ========================================================= */
 :root {
-  --accent: #6d5dfc;
-  --accent-strong: #5a49f0;
-  --accent-soft: rgba(109, 93, 252, 0.14);
+  --accent: #facc15;
+  --accent-strong: #eab308;
+  --accent-soft: rgba(250, 204, 21, 0.14);
+  --accent-text: #facc15; /* warna kuning untuk teks di atas background */
+  --on-accent: #1a1500; /* warna teks di atas tombol/area kuning */
   --live: #12b76a;
   --video: #f04438;
 
-  --bg: #0b0d14;
-  --bg-elev: #141824;
-  --bg-elev-2: #1b2030;
+  --bg: #0e0d0a;
+  --bg-elev: #18160f;
+  --bg-elev-2: #232017;
   --border: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.16);
-  --text: #eef0f7;
-  --text-muted: #9aa1b5;
+  --text: #f6f3e8;
+  --text-muted: #aaa48f;
   --overlay: rgba(5, 6, 10, 0.78);
   --shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.6);
-  --hero-glow: rgba(109, 93, 252, 0.28);
+  --hero-glow: rgba(250, 204, 21, 0.22);
 
   --radius: 16px;
   --radius-sm: 10px;
@@ -26,17 +28,18 @@
 }
 
 :root[data-theme='light'] {
-  --accent-soft: rgba(109, 93, 252, 0.1);
-  --bg: #f6f7fb;
+  --accent-soft: rgba(250, 204, 21, 0.22);
+  --accent-text: #a16207;
+  --bg: #fffbeb;
   --bg-elev: #ffffff;
-  --bg-elev-2: #eef0f6;
-  --border: rgba(15, 20, 40, 0.08);
-  --border-strong: rgba(15, 20, 40, 0.16);
-  --text: #12162a;
-  --text-muted: #5b6278;
+  --bg-elev-2: #fef3c7;
+  --border: rgba(60, 45, 0, 0.1);
+  --border-strong: rgba(60, 45, 0, 0.18);
+  --text: #1c1a10;
+  --text-muted: #6b6449;
   --overlay: rgba(15, 18, 30, 0.6);
-  --shadow: 0 20px 45px -24px rgba(20, 25, 60, 0.35);
-  --hero-glow: rgba(109, 93, 252, 0.18);
+  --shadow: 0 20px 45px -24px rgba(120, 90, 0, 0.35);
+  --hero-glow: rgba(250, 204, 21, 0.45);
   color-scheme: light;
 }
 
@@ -81,7 +84,7 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent-text);
   outline-offset: 2px;
 }
 
@@ -121,7 +124,7 @@ button {
 
 .btn-primary {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .btn-primary:hover {
@@ -191,7 +194,7 @@ button {
   width: 22px;
   height: 22px;
   border-radius: 7px;
-  background: linear-gradient(135deg, var(--accent), #b26bff);
+  background: linear-gradient(135deg, #fde047, #f59e0b);
   flex-shrink: 0;
 }
 
@@ -234,7 +237,7 @@ button {
 
 .lang-switch button.active {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 /* ---------- Hero ---------- */
@@ -260,7 +263,7 @@ button {
 
 .kicker {
   margin: 0 0 12px;
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
@@ -273,6 +276,12 @@ button {
   line-height: 1.05;
   letter-spacing: -0.03em;
   font-weight: 800;
+}
+
+.hero-title .highlight {
+  background: linear-gradient(transparent 74%, var(--accent) 74%, var(--accent) 94%, transparent 94%);
+  padding: 0 4px;
+  margin: 0 -4px;
 }
 
 .hero-bio {
@@ -310,6 +319,7 @@ button {
   font-size: 1.7rem;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
+  color: var(--accent-text);
 }
 
 /* ---------- Filter ---------- */
@@ -349,9 +359,13 @@ button {
 }
 
 .chip.active {
-  background: var(--accent-soft);
+  background: var(--accent);
   border-color: var(--accent);
-  color: var(--text);
+  color: var(--on-accent);
+}
+
+.chip.active .chip-count {
+  background: rgba(0, 0, 0, 0.12);
 }
 
 .chip-count {
@@ -449,7 +463,7 @@ button {
   height: 100%;
   font-size: 3rem;
   font-weight: 800;
-  color: var(--accent);
+  color: var(--accent-text);
   background: linear-gradient(135deg, var(--accent-soft), transparent);
 }
 
@@ -537,7 +551,7 @@ button {
 }
 
 .card-title button:hover {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .card-summary {
@@ -710,6 +724,7 @@ button {
 
 .gallery-nav:hover {
   background: var(--accent);
+  color: var(--on-accent);
 }
 
 .gallery-nav.prev {
@@ -803,8 +818,26 @@ button {
 /* ---------- Footer ---------- */
 .footer {
   padding: 72px 0 40px;
-  border-top: 1px solid var(--border);
-  background: var(--bg-elev);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.footer .muted,
+.footer .footer-note {
+  color: rgba(26, 21, 0, 0.72);
+}
+
+.footer .btn-ghost {
+  border-color: rgba(26, 21, 0, 0.3);
+  color: var(--on-accent);
+}
+
+.footer .btn-ghost:hover {
+  background: rgba(26, 21, 0, 0.08);
+}
+
+.footer :focus-visible {
+  outline-color: var(--on-accent);
 }
 
 .section-title {
