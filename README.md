@@ -61,6 +61,18 @@ Upload video ke YouTube (boleh **Unlisted** supaya tidak muncul di pencarian You
 
 ## Deploy
 
+### GitHub Pages (tahap uji coba)
+Alamat: **https://2013tib-droid.github.io/Portofolio-pojectku/**
+
+Workflow `.github/workflows/deploy-pages.yml` otomatis build & deploy setiap push ke branch `claude/web-dev-setup-ckqcdc` (bisa juga dijalankan manual dari tab **Actions → Deploy ke GitHub Pages → Run workflow**).
+
+Setup sekali saja di GitHub:
+1. **Settings → Pages → Build and deployment → Source**: pilih **GitHub Actions**.
+2. **Settings → Environments → github-pages → Deployment branches and tags**: tambahkan branch `claude/web-dev-setup-ckqcdc` (bawaannya cuma branch default yang boleh deploy).
+3. Buka tab **Actions**, jalankan ulang workflow kalau run pertama gagal karena belum di-setup.
+
+Karena situsnya ada di sub-folder, path dasar diatur lewat variabel `BASE_PATH` saat build. Untuk Vercel/Netlify tidak perlu diubah apa-apa.
+
 ### Vercel
 1. Push repo ini ke GitHub.
 2. Masuk ke [vercel.com](https://vercel.com) → **Add New… → Project** → pilih repo ini.

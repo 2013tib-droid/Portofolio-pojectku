@@ -10,9 +10,16 @@ import ProjectCard from './components/ProjectCard.jsx'
 import ProjectModal from './components/ProjectModal.jsx'
 import Footer from './components/Footer.jsx'
 
+// Path gambar lokal ("/screenshots/...") diberi awalan base URL, supaya tetap jalan
+// kalau situs ada di sub-folder (GitHub Pages: /Portofolio-pojectku/).
+const withBase = (src) =>
+  typeof src === 'string' && src.startsWith('/') && !src.startsWith('//')
+    ? import.meta.env.BASE_URL + src.slice(1)
+    : src
+
 // Lengkapi tiap project dengan info turunan (punya live? video? screenshot?).
 const projects = rawProjects.map((p) => {
-  const screenshots = p.screenshots ?? []
+  const screenshots = (p.screenshots ?? []).map(withBase)
   const videoId = getYouTubeId(p.youtube)
   return {
     ...p,
@@ -102,7 +109,7 @@ export default function App() {
     <>
       <Header name={profile.name} theme={theme} onToggleTheme={() => setTheme((v) => (v === 'dark' ? 'light' : 'dark'))} />
       <main>
-        <Hero profile={profile} />
+        <Hero profile={{ ...profile, photo: withBase(profile.photo) }} />
 
         <section className="projects" id="projects">
           <div className="container">
