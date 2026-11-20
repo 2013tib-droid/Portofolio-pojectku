@@ -109,7 +109,7 @@ export default function App() {
     <>
       <Header name={profile.name} theme={theme} onToggleTheme={() => setTheme((v) => (v === 'dark' ? 'light' : 'dark'))} />
       <main>
-        <Hero profile={profile} />
+        <Hero profile={{ ...profile, photo: withBase(profile.photo) }} />
 
         <section className="projects" id="projects">
           <div className="container">

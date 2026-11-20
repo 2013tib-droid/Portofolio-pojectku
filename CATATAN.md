@@ -17,7 +17,7 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 
 ### Tahap 1: Halaman portofolio
 - Header dengan nama, menu, tombol bahasa ID/EN, dan tombol mode gelap/terang
-- Bagian atas: nama, peran, bio, dan statistik (jumlah project, yang bisa dicoba, yang ada videonya)
+- Bagian atas: nama, peran, bio (statistik dihapus di Tahap 4)
 - Kartu project dengan badge otomatis:
   - **Live**: muncul kalau `liveUrl` diisi, ada tombol "Buka website"
   - **Video**: muncul kalau `youtube` diisi, ada tombol "Tonton video"
@@ -63,9 +63,18 @@ Jangan klik **Configure** di kartu Jekyll / Static HTML, karena workflow sudah a
 
 Kalau mau deploy dari branch lain, branch itu juga harus ditambahkan di Environments → github-pages, dan dimasukkan ke `on: push: branches` di workflow.
 
+### Tahap 4: Kurangi kesan AI slop
+- Hero: judul besar berisi apa yang dibuat dan untuk siapa; nama pindah ke baris kecil di atasnya
+- Slot foto opsional (`photo` di `profile.js`, taruh file di `public/`)
+- Kotak statistik dihapus karena mengulang angka di filter
+- Project punya field `role` (peranku) dan `result` (hasil nyata), tampil di kartu dan popup
+- Semua gradasi dihapus (glow hero, logo, placeholder kartu): **jangan pakai gradasi**, warna solid saja
+- Em dash dihapus dari copy
+
 ## Yang masih perlu dikerjakan
 
-- [ ] Isi data diri di `src/data/profile.js` (nama, bio, email, GitHub, LinkedIn)
+- [ ] Isi data diri di `src/data/profile.js` (nama, foto, judul, bio, email, GitHub, LinkedIn)
+- [ ] Ganti `role` dan `result` contoh di tiap project dengan yang asli (angka sekarang karangan, jangan sampai tayang)
 - [ ] Ganti 6 project contoh di `src/data/projects.js` dengan project asli
 - [ ] Taruh screenshot asli di `public/screenshots/`, lalu hapus gambar contoh (`*.svg`)
 - [ ] Upload video demo ke YouTube dan masukkan link-nya (video sekarang masih placeholder Big Buck Bunny)
@@ -94,3 +103,4 @@ Kalau mau deploy dari branch lain, branch itu juga harus ditambahkan di Environm
 | 20 Nov 2026 | Tema diganti jadi dominan kuning |
 | 20 Nov 2026 | Setup deploy uji coba ke GitHub Pages |
 | 20 Nov 2026 | GitHub Pages diaktifkan, deploy pertama berhasil |
+| 20 Nov 2026 | Hero dan kartu dibuat lebih konkret, statistik dan semua gradasi dihapus |
