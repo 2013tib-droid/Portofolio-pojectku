@@ -8,7 +8,7 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 | --- | --- |
 | Konsep | Satu halaman berisi kartu-kartu project. Tiap kartu menunjukkan apa yang tersedia: website live, video, dan/atau screenshot |
 | Teknologi | React + Vite |
-| Deploy | Uji coba dulu di GitHub Pages, kalau sudah oke baru ke Vercel (langkahnya ada di `README.md`) |
+| Deploy | Uji coba dulu di GitHub Pages (sudah online), kalau sudah oke baru ke Vercel (langkahnya ada di `README.md`) |
 | Video | Di-host di YouTube (boleh Unlisted, opsi "Allow embedding" harus aktif), lalu diputar langsung di popup |
 | Bahasa | Dua bahasa, Indonesia & Inggris, dengan tombol ganti ID/EN |
 | Data | Sementara pakai 6 project contoh, nanti diganti dengan project asli |
@@ -43,6 +43,25 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 - Workflow GitHub Actions untuk build & deploy ke `https://2013tib-droid.github.io/Portofolio-pojectku/`
 - Path dasar (`base`) Vite bisa diatur lewat `BASE_PATH`; default `/` supaya Vercel tetap jalan tanpa diubah
 - Path screenshot lokal otomatis diberi awalan base URL, jadi tetap muncul di sub-folder
+- **Status: sudah online** di https://2013tib-droid.github.io/Portofolio-pojectku/
+- Setiap push ke branch `claude/web-dev-setup-ckqcdc` otomatis ter-deploy
+
+#### Pengaturan GitHub yang sudah dilakukan
+| Lokasi | Pengaturan |
+| --- | --- |
+| Settings → Pages → Source | **GitHub Actions** (tersimpan otomatis, tidak ada tombol Save; tombol Save di bawahnya hanya untuk Custom domain) |
+| Settings → Environments → github-pages → Deployment branches | **Selected branches**: `claude/elegant-knuth-d8rmf3` dan `claude/web-dev-setup-ckqcdc` |
+
+Jangan klik **Configure** di kartu Jekyll / Static HTML, karena workflow sudah ada sendiri (`.github/workflows/deploy-pages.yml`).
+
+#### Masalah yang pernah muncul
+| Error | Penyebab | Solusi |
+| --- | --- | --- |
+| Job `deploy` gagal: `Failed to create deployment (status: 404) ... Ensure GitHub Pages has been enabled` | GitHub Pages belum diaktifkan | Set Source ke GitHub Actions, lalu Actions → run → **Re-run failed jobs** |
+| (Akan muncul kalau branch belum diizinkan) deploy ditolak oleh environment | Bawaannya hanya branch default yang boleh deploy | Tambahkan branch di Environments → github-pages |
+| Peringatan `Node.js 20 is deprecated` dari `deploy-pages@v4` | Hanya peringatan | Tidak perlu diapa-apakan |
+
+Kalau mau deploy dari branch lain, branch itu juga harus ditambahkan di Environments → github-pages, dan dimasukkan ke `on: push: branches` di workflow.
 
 ## Yang masih perlu dikerjakan
 
@@ -51,7 +70,8 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 - [ ] Taruh screenshot asli di `public/screenshots/`, lalu hapus gambar contoh (`*.svg`)
 - [ ] Upload video demo ke YouTube dan masukkan link-nya (video sekarang masih placeholder Big Buck Bunny)
 - [ ] Ganti link `https://example.com` dengan link website asli
-- [ ] Aktifkan GitHub Pages (Source: GitHub Actions) & izinkan branch di environment `github-pages`
+- [x] Aktifkan GitHub Pages (Source: GitHub Actions) & izinkan branch di environment `github-pages`
+- [ ] Cek tampilan di https://2013tib-droid.github.io/Portofolio-pojectku/ (HP & laptop)
 - [ ] Kalau sudah oke di GitHub Pages, deploy ke Vercel
 - [ ] Cek pemutaran video YouTube langsung di browser (belum bisa dicek dari sandbox)
 
@@ -73,3 +93,4 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 | 20 Nov 2026 | Halaman portofolio dibuat (React + Vite, dua bahasa, data contoh) |
 | 20 Nov 2026 | Tema diganti jadi dominan kuning |
 | 20 Nov 2026 | Setup deploy uji coba ke GitHub Pages |
+| 20 Nov 2026 | GitHub Pages diaktifkan, deploy pertama berhasil |
