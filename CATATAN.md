@@ -46,7 +46,6 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 - [x] Screenshot asli di `public/screenshots/` (contoh `*.svg` sudah dihapus)
 - [ ] Isi nama, email, dan LinkedIn di `src/data/profile.js` (GitHub sudah diisi)
 - [ ] Cek semua link live bisa dibuka. Link diambil dari README dan belum bisa dibuka dari sandbox
-- [ ] Link Vercel WartungKit belum ada di README, jadi kartunya belum punya tombol "Buka website"
 - [ ] Screenshot untuk Motion Studio, SoalSKD, dan Agensi (sekarang masih kotak huruf)
 - [ ] Video demo YouTube (opsional, belum ada project yang punya video)
 - [ ] Deploy ke Vercel atau Netlify
@@ -76,3 +75,4 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 | 20 Nov 2026 | Halaman portofolio dibuat (React + Vite, dua bahasa, data contoh) |
 | 20 Nov 2026 | Tema diganti jadi dominan kuning |
 | 20 Nov 2026 | Data contoh diganti 10 project asli + screenshot asli |
+| 20 Nov 2026 | Link Petualangan Pintar jadi petualanganpintar.com, link WartungKit ditambahkan |
