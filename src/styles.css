@@ -261,27 +261,31 @@ button {
   position: relative;
 }
 
-.kicker {
-  margin: 0 0 12px;
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.hero-text {
+  max-width: 720px;
+}
+
+.hero-name {
+  margin: 0 0 16px;
   color: var(--accent-text);
   font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 1rem;
 }
 
 .hero-title {
   margin: 0;
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-size: clamp(2rem, 4.6vw, 3.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
   font-weight: 800;
-}
-
-.hero-title .highlight {
-  background: linear-gradient(transparent 74%, var(--accent) 74%, var(--accent) 94%, transparent 94%);
-  padding: 0 4px;
-  margin: 0 -4px;
+  text-wrap: balance;
 }
 
 .hero-bio {
@@ -289,37 +293,30 @@ button {
   margin: 18px 0 32px;
   font-size: 1.08rem;
   color: var(--text-muted);
+  text-wrap: pretty;
 }
 
-.stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 0 0 32px;
+.hero-photo {
+  flex: none;
+  width: 280px;
+  height: 280px;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
 }
 
-.stat {
-  min-width: 130px;
-  padding: 14px 18px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--bg-elev);
-}
+@media (max-width: 760px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 28px;
+  }
 
-.stat dt {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.stat dd {
-  margin: 2px 0 0;
-  font-size: 1.7rem;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-  color: var(--accent-text);
+  .hero-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+  }
 }
 
 /* ---------- Filter ---------- */
@@ -557,6 +554,28 @@ button {
 .card-summary {
   margin: 0 0 14px;
   font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.card-result {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card-result svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--live);
+}
+
+.card-role {
+  margin: 0 0 14px;
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 
@@ -873,20 +892,6 @@ button {
 
   .hero {
     padding: 56px 0 40px;
-  }
-
-  .stat {
-    flex: 1 1 0;
-    min-width: 0;
-    padding: 12px 14px;
-  }
-
-  .stat dt .icon {
-    display: none;
-  }
-
-  .stat dd {
-    font-size: 1.4rem;
   }
 
   .chips {

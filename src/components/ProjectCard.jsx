@@ -51,6 +51,16 @@ export default function ProjectCard({ project, onOpen }) {
           </button>
         </h3>
         <p className="card-summary">{pick(project.summary)}</p>
+        {project.result && (
+          <p className="card-result">
+            <Icon name="check" size={15} /> {pick(project.result)}
+          </p>
+        )}
+        {project.role && (
+          <p className="card-role">
+            {t.myRole}: {pick(project.role)}
+          </p>
+        )}
         <ul className="tags">
           {project.tech.map((tech) => (
             <li key={tech}>{tech}</li>

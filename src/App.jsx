@@ -91,7 +91,7 @@ export default function App() {
     return projects.filter((p) => {
       if (!matchesFilter[filter](p)) return false
       if (!q) return true
-      const haystack = [p.title, pick(p.summary), pick(p.category), ...p.tech].join(' ').toLowerCase()
+      const haystack = [p.title, pick(p.summary), pick(p.category), pick(p.result), ...p.tech].join(' ').toLowerCase()
       return haystack.includes(q)
     })
   }, [filter, query, pick])
@@ -102,7 +102,7 @@ export default function App() {
     <>
       <Header name={profile.name} theme={theme} onToggleTheme={() => setTheme((v) => (v === 'dark' ? 'light' : 'dark'))} />
       <main>
-        <Hero profile={profile} stats={{ total: projects.length, live: counts.live, video: counts.video }} />
+        <Hero profile={profile} />
 
         <section className="projects" id="projects">
           <div className="container">

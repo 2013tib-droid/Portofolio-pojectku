@@ -14,6 +14,7 @@ const paths = {
     </>
   ),
   external: <path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" />,
+  check: <path d="m5 12.5 4.5 4.5L19 7.5" />,
   code: <path d="m8 7-5 5 5 5M16 7l5 5-5 5" />,
   close: <path d="M6 6l12 12M18 6 6 18" />,
   left: <path d="m15 5-7 7 7 7" />,
