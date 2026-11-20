@@ -11,7 +11,7 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 | Deploy | Vercel atau Netlify (langkahnya ada di `README.md`) |
 | Video | Di-host di YouTube (boleh Unlisted, opsi "Allow embedding" harus aktif), lalu diputar langsung di popup |
 | Bahasa | Dua bahasa, Indonesia & Inggris, dengan tombol ganti ID/EN |
-| Data | Sementara pakai 6 project contoh, nanti diganti dengan project asli |
+| Data | 10 project asli dari repo GitHub publik (`belajar-primeng` sengaja tidak dimasukkan) |
 
 ## Yang sudah dibuat
 
@@ -42,12 +42,20 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 ## Yang masih perlu dikerjakan
 
 - [ ] Isi data diri di `src/data/profile.js` (nama, bio, email, GitHub, LinkedIn)
-- [ ] Ganti 6 project contoh di `src/data/projects.js` dengan project asli
-- [ ] Taruh screenshot asli di `public/screenshots/`, lalu hapus gambar contoh (`*.svg`)
-- [ ] Upload video demo ke YouTube dan masukkan link-nya (video sekarang masih placeholder Big Buck Bunny)
-- [ ] Ganti link `https://example.com` dengan link website asli
+- [x] Ganti project contoh dengan 10 project asli
+- [x] Screenshot asli di `public/screenshots/` (contoh `*.svg` sudah dihapus)
+- [ ] Isi nama, email, dan LinkedIn di `src/data/profile.js` (GitHub sudah diisi)
+- [ ] Cek semua link live bisa dibuka. Link diambil dari README dan belum bisa dibuka dari sandbox
+- [ ] Screenshot untuk Motion Studio, SoalSKD, dan Agensi (sekarang masih kotak huruf)
+- [ ] Video demo YouTube (opsional, belum ada project yang punya video)
 - [ ] Deploy ke Vercel atau Netlify
 - [ ] Cek pemutaran video YouTube langsung di browser (belum bisa dicek dari sandbox)
+
+### Tahap 3: Project asli
+- 10 kartu dari repo publik: Petualangan Pintar, Sruput Kopi, Screening Saham IDX, US Market Screener, XAUUSD Backtester, WartungKit, Sedekah Subuh, Motion Studio, SoalSKD, Agensi
+- Deskripsi, teknologi, dan angka hasil diambil dari README tiap repo dan dari tampilan halamannya pada 20 Nov 2026
+- Screenshot diambil dari tampilan asli (dashboard dijalankan lokal dengan data di repo). Gambar Petualangan Pintar memakai og-image dari repo-nya
+- Kalimat hero diganti supaya sesuai dengan project asli
 
 ## Lokasi file penting
 
@@ -66,3 +74,5 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 | --- | --- |
 | 20 Nov 2026 | Halaman portofolio dibuat (React + Vite, dua bahasa, data contoh) |
 | 20 Nov 2026 | Tema diganti jadi dominan kuning |
+| 20 Nov 2026 | Data contoh diganti 10 project asli + screenshot asli |
+| 20 Nov 2026 | Link Petualangan Pintar jadi petualanganpintar.com, link WartungKit ditambahkan |
