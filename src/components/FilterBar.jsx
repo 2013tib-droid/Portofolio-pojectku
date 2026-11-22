@@ -9,7 +9,9 @@ export default function FilterBar({ filter, onFilter, counts, query, onQuery }) 
     { key: 'live', label: t.filterLive, icon: 'globe' },
     { key: 'video', label: t.filterVideo, icon: 'play' },
     { key: 'shots', label: t.filterShots, icon: 'image' },
-  ]
+  ].filter((opt) => opt.key === 'all' || opt.key === filter || counts[opt.key] > 0)
+  // Filter yang hasilnya 0 disembunyikan supaya pengunjung tidak mengeklik pilihan kosong.
+  // Begitu ada project dengan video/screenshot saja, tombolnya muncul sendiri.
 
   return (
     <div className="filter-bar">
@@ -34,9 +36,18 @@ export default function FilterBar({ filter, onFilter, counts, query, onQuery }) 
           type="search"
           value={query}
           onChange={(e) => onQuery(e.target.value)}
+          onKeyDown={(e) => e.key === 'Escape' && query && (e.preventDefault(), onQuery(''))}
           placeholder={t.searchPlaceholder}
           aria-label={t.searchPlaceholder}
+          enterKeyHint="search"
+          autoComplete="off"
+          spellCheck={false}
         />
+        {query && (
+          <button type="button" className="search-clear" onClick={() => onQuery('')} aria-label={t.clearSearch}>
+            <Icon name="close" size={14} />
+          </button>
+        )}
       </label>
     </div>
   )

@@ -49,6 +49,7 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 - [ ] Screenshot untuk Motion Studio, SoalSKD, dan Agensi (sekarang masih kotak huruf)
 - [ ] Video demo YouTube (opsional, belum ada project yang punya video)
 - [ ] Deploy ke Vercel atau Netlify
+- [ ] Setelah punya domain, ganti `og:image` di `index.html` jadi URL lengkap (https://domain/...) supaya preview share muncul di WhatsApp/Facebook
 - [ ] Cek pemutaran video YouTube langsung di browser (belum bisa dicek dari sandbox)
 
 ### Tahap 3: Project asli
@@ -56,6 +57,17 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 - Deskripsi, teknologi, dan angka hasil diambil dari README tiap repo dan dari tampilan halamannya pada 20 Nov 2026
 - Screenshot diambil dari tampilan asli (dashboard dijalankan lokal dengan data di repo). Gambar Petualangan Pintar memakai og-image dari repo-nya
 - Kalimat hero diganti supaya sesuai dengan project asli
+
+### Tahap 4: Audit UI/UX & polish
+- Hero: eyebrow nama · peran, tombol GitHub, dan kolase 3 screenshot project live (desktop saja; diambil otomatis dari `projects.js`)
+- Judul bagian "Project pilihan" + ringkasan jumlah project & yang live (dihitung dari data)
+- Filter yang hasilnya 0 disembunyikan otomatis; pencarian punya tombol hapus & Esc
+- Kartu tanpa screenshot memakai placeholder berdesain (logo huruf + nama), bukan huruf besar polos
+- Kartu tanpa website live menampilkan tombol "Source code"; hasil nyata (`result`) tampil sebagai kotak sorotan
+- Efek hover hanya di perangkat yang punya hover; gambar kartu bukan tab stop ganda
+- Popup: header (tombol tutup) tetap terlihat saat scroll, swipe screenshot di HP, tab mengikuti pola aksesibilitas
+- Header transparan, jadi blur + garis saat halaman di-scroll; footer dua kolom + "Kembali ke atas"
+- Meta Open Graph & theme-color di `index.html`
 
 ## Lokasi file penting
 
@@ -76,3 +88,4 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 | 20 Nov 2026 | Tema diganti jadi dominan kuning |
 | 20 Nov 2026 | Data contoh diganti 10 project asli + screenshot asli |
 | 20 Nov 2026 | Link Petualangan Pintar jadi petualanganpintar.com, link WartungKit ditambahkan |
+| 22 Nov 2026 | Audit UI/UX: hero, kartu, popup, filter, footer, aksesibilitas, dan meta share dirapikan |

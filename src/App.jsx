@@ -9,6 +9,7 @@ import FilterBar from './components/FilterBar.jsx'
 import ProjectCard from './components/ProjectCard.jsx'
 import ProjectModal from './components/ProjectModal.jsx'
 import Footer from './components/Footer.jsx'
+import Icon from './components/Icon.jsx'
 
 // Lengkapi tiap project dengan info turunan (punya live? video? screenshot?).
 const projects = rawProjects.map((p) => {
@@ -27,6 +28,9 @@ const projects = rawProjects.map((p) => {
     },
   }
 })
+
+// Kolase di hero: project live pertama yang punya screenshot.
+const heroPreviews = projects.filter((p) => p.meta.hasLive && p.meta.hasShots).slice(0, 3)
 
 const matchesFilter = {
   all: () => true,
@@ -81,10 +85,7 @@ export default function App() {
     history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
   }, [])
 
-  const counts = useMemo(
-    () => Object.fromEntries(Object.entries(matchesFilter).map(([k, fn]) => [k, projects.filter(fn).length])),
-    [],
-  )
+  const counts = useMemo(() => Object.fromEntries(Object.entries(matchesFilter).map(([k, fn]) => [k, projects.filter(fn).length])), [])
 
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -102,10 +103,14 @@ export default function App() {
     <>
       <Header name={profile.name} theme={theme} onToggleTheme={() => setTheme((v) => (v === 'dark' ? 'light' : 'dark'))} />
       <main>
-        <Hero profile={profile} />
+        <Hero profile={profile} previews={heroPreviews} onOpen={openProject} />
 
         <section className="projects" id="projects">
           <div className="container">
+            <div className="section-head">
+              <h2 className="section-heading">{t.projectsTitle}</h2>
+              <p className="section-sub">{t.projectsSub(projects.length, counts.live)}</p>
+            </div>
             <FilterBar filter={filter} onFilter={setFilter} counts={counts} query={query} onQuery={setQuery} />
             <p className="result-info" aria-live="polite">
               {t.showing(visible.length, projects.length)}
@@ -113,12 +118,13 @@ export default function App() {
 
             {visible.length > 0 ? (
               <div className="grid">
-                {visible.map((p) => (
-                  <ProjectCard key={p.id} project={p} onOpen={openProject} />
+                {visible.map((p, i) => (
+                  <ProjectCard key={p.id} project={p} index={i} onOpen={openProject} />
                 ))}
               </div>
             ) : (
               <div className="no-results">
+                <Icon name="search" size={22} />
                 <p>{t.noResults}</p>
                 <button
                   type="button"

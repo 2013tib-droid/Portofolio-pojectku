@@ -15,24 +15,33 @@ export default function Footer({ profile }) {
   return (
     <footer className="footer" id="contact">
       <div className="container">
-        <h2 className="section-title">{t.contactTitle}</h2>
-        <p className="muted">{t.contactText}</p>
-        <ul className="contact-links">
-          {links.map((link) => (
-            <li key={link.icon}>
-              <a
-                href={link.href}
-                className="btn btn-ghost"
-                {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              >
-                <Icon name={link.icon} size={16} /> {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <p className="footer-note">
-          © {new Date().getFullYear()} {profile.name} · {t.madeWith}
-        </p>
+        <div className="footer-cta">
+          <div>
+            <h2 className="section-title">{t.contactTitle}</h2>
+            <p className="muted">{t.contactText}</p>
+          </div>
+          <ul className="contact-links">
+            {links.map((link) => (
+              <li key={link.icon}>
+                <a
+                  href={link.href}
+                  className="btn btn-ghost"
+                  {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  <Icon name={link.icon} size={16} /> {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="footer-bottom">
+          <p className="footer-note">
+            © {new Date().getFullYear()} {profile.name} · {t.madeWith}
+          </p>
+          <a href="#top" className="footer-top">
+            {t.backToTop} <Icon name="arrowDown" size={14} className="icon-up" />
+          </a>
+        </div>
       </div>
     </footer>
   )

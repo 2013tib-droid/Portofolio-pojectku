@@ -15,6 +15,7 @@ export default function ProjectModal({ project, initialTab, onClose }) {
   })
   const [index, setIndex] = useState(0)
   const total = project.screenshots.length
+  const touchX = useRef(null)
 
   // Buka <dialog> secara modal (fokus terkunci di dalam & Esc menutup).
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function ProjectModal({ project, initialTab, onClose }) {
   useEffect(() => {
     if (tab !== 'shots' || total < 2) return
     const onKey = (e) => {
+      if (e.target.closest?.('[role="tab"], input, textarea')) return
       if (e.key === 'ArrowRight') setIndex((i) => (i + 1) % total)
       if (e.key === 'ArrowLeft') setIndex((i) => (i - 1 + total) % total)
     }
@@ -35,6 +37,26 @@ export default function ProjectModal({ project, initialTab, onClose }) {
   }, [tab, total])
 
   const go = (step) => setIndex((i) => (i + step + total) % total)
+
+  // Geser (swipe) gambar di HP.
+  const onTouchStart = (e) => {
+    touchX.current = e.touches[0].clientX
+  }
+  const onTouchEnd = (e) => {
+    if (touchX.current == null || total < 2) return
+    const dx = e.changedTouches[0].clientX - touchX.current
+    touchX.current = null
+    if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1)
+  }
+
+  // Panah kiri/kanan di antara tab (pola tablist standar).
+  const onTabKey = (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      const nextTab = tab === 'video' ? 'shots' : 'video'
+      setTab(nextTab)
+      e.currentTarget.parentElement.querySelector(`#tab-${nextTab}`)?.focus()
+    }
+  }
   const vertical = isYouTubeShort(project.youtube)
 
   return (
@@ -55,7 +77,9 @@ export default function ProjectModal({ project, initialTab, onClose }) {
         <header className="modal-header">
           <div>
             <p className="card-meta">
-              {pick(project.category)} · {project.year}
+              <span>{pick(project.category)}</span>
+              <span className="card-meta-sep" aria-hidden="true" />
+              <span>{project.year}</span>
             </p>
             <h2 id="modal-title" className="modal-title">
               {project.title}
@@ -68,16 +92,40 @@ export default function ProjectModal({ project, initialTab, onClose }) {
 
         {hasVideo && hasShots && (
           <div className="tabs" role="tablist">
-            <button type="button" role="tab" aria-selected={tab === 'video'} className={tab === 'video' ? 'active' : ''} onClick={() => setTab('video')}>
+            <button
+              type="button"
+              role="tab"
+              id="tab-video"
+              aria-controls="modal-media"
+              aria-selected={tab === 'video'}
+              tabIndex={tab === 'video' ? 0 : -1}
+              className={tab === 'video' ? 'active' : ''}
+              onClick={() => setTab('video')}
+              onKeyDown={onTabKey}
+            >
               <Icon name="play" size={14} /> {t.tabVideo}
             </button>
-            <button type="button" role="tab" aria-selected={tab === 'shots'} className={tab === 'shots' ? 'active' : ''} onClick={() => setTab('shots')}>
+            <button
+              type="button"
+              role="tab"
+              id="tab-shots"
+              aria-controls="modal-media"
+              aria-selected={tab === 'shots'}
+              tabIndex={tab === 'shots' ? 0 : -1}
+              className={tab === 'shots' ? 'active' : ''}
+              onClick={() => setTab('shots')}
+              onKeyDown={onTabKey}
+            >
               <Icon name="image" size={14} /> {t.tabShots} ({total})
             </button>
           </div>
         )}
 
-        <div className="modal-media">
+        <div
+          className="modal-media"
+          id="modal-media"
+          {...(hasVideo && hasShots ? { role: 'tabpanel', 'aria-labelledby': `tab-${tab}` } : {})}
+        >
           {tab === 'video' && hasVideo && (
             <div className={`video-frame ${vertical ? 'vertical' : ''}`}>
               <iframe
@@ -92,8 +140,14 @@ export default function ProjectModal({ project, initialTab, onClose }) {
 
           {tab === 'shots' && hasShots && (
             <div className="gallery">
-              <div className="gallery-main">
-                <img src={project.screenshots[index]} alt={`${project.title} — ${t.shotOf(index + 1, total)}`} />
+              <div className="gallery-main" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+                <img
+                  key={project.screenshots[index]}
+                  className="gallery-img"
+                  src={project.screenshots[index]}
+                  alt={`${project.title} — ${t.shotOf(index + 1, total)}`}
+                  decoding="async"
+                />
                 {total > 1 && (
                   <>
                     <button type="button" className="gallery-nav prev" onClick={() => go(-1)} aria-label={t.prev}>
@@ -102,7 +156,7 @@ export default function ProjectModal({ project, initialTab, onClose }) {
                     <button type="button" className="gallery-nav next" onClick={() => go(1)} aria-label={t.next}>
                       <Icon name="right" />
                     </button>
-                    <span className="gallery-count">
+                    <span className="gallery-count" aria-live="polite">
                       {index + 1} / {total}
                     </span>
                   </>
@@ -146,7 +200,11 @@ export default function ProjectModal({ project, initialTab, onClose }) {
             </div>
           )}
           <p className="modal-text">{pick(project.details) || pick(project.summary)}</p>
-          {project.result && <p className="card-result">{pick(project.result)}</p>}
+          {project.result && (
+            <p className="card-result">
+              <Icon name="check" size={15} /> <span>{pick(project.result)}</span>
+            </p>
+          )}
           {project.role && (
             <p className="card-role">
               {t.myRole}: {pick(project.role)}
