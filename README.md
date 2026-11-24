@@ -64,7 +64,7 @@ Upload video ke YouTube (boleh **Unlisted** supaya tidak muncul di pencarian You
 ### GitHub Pages (tahap uji coba)
 Alamat: **https://2013tib-droid.github.io/Portofolio-pojectku/**
 
-Workflow `.github/workflows/deploy-pages.yml` otomatis build & deploy setiap push ke branch `claude/web-dev-setup-ckqcdc` (bisa juga dijalankan manual dari tab **Actions → Deploy ke GitHub Pages → Run workflow**).
+Workflow `.github/workflows/deploy-pages.yml` otomatis build & deploy setiap push ke branch `claude/elegant-knuth-d8rmf3` (branch utama) atau `claude/web-dev-setup-ckqcdc` (bisa juga dijalankan manual dari tab **Actions → Deploy ke GitHub Pages → Run workflow**).
 
 Setup sekali saja di GitHub:
 1. **Settings → Pages → Build and deployment → Source**: pilih **GitHub Actions**.
