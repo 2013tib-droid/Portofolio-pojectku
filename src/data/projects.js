@@ -14,7 +14,6 @@
 //                   tapi inilah yang paling meyakinkan pengunjung. Jangan mengarang angka.
 //    tech         : daftar teknologi yang dipakai
 //    liveUrl      : link website yang bisa dibuka.    Kosongkan '' kalau tidak ada.
-//    repoUrl      : link source code (GitHub, dll).   Kosongkan '' kalau tidak ada / private.
 //    youtube      : link video YouTube (link biasa, youtu.be, atau shorts juga bisa).
 //                   Kosongkan '' kalau tidak ada video.
 //    screenshots  : daftar gambar. Taruh file di folder public/screenshots/
@@ -27,7 +26,6 @@
 //  `result` diambil dari README atau dari tampilan halamannya pada tanggal itu.
 // ============================================================
 
-const GH = 'https://github.com/2013tib-droid'
 
 const projects = [
   {
@@ -46,7 +44,6 @@ const projects = [
     role: { id: 'Dikerjakan sendiri: portal, sistem akses, dan engine game', en: 'Built solo: portal, access system, and game engine' },
     tech: ['React', 'TypeScript', 'Vite', 'Firebase', 'Cloud Functions'],
     liveUrl: 'https://petualanganpintar.com/',
-    repoUrl: `${GH}/Game-Edukasi-Anak`,
     youtube: '',
     screenshots: ['/screenshots/petualangan-pintar-1.webp'],
   },
@@ -69,7 +66,6 @@ const projects = [
     },
     tech: ['Python', 'GitHub Actions', 'Vercel'],
     liveUrl: 'https://sruput-kopi.vercel.app/',
-    repoUrl: `${GH}/Scraping`,
     youtube: '',
     screenshots: ['/screenshots/sruput-kopi-1.webp'],
   },
@@ -92,7 +88,6 @@ const projects = [
     },
     tech: ['Python', 'yfinance', 'JavaScript', 'GitHub Actions', 'GitHub Pages'],
     liveUrl: 'https://2013tib-droid.github.io/Screening-Saham/',
-    repoUrl: `${GH}/Screening-Saham`,
     youtube: '',
     screenshots: ['/screenshots/screening-saham-1.webp'],
   },
@@ -115,7 +110,6 @@ const projects = [
     },
     tech: ['Python', 'SEC EDGAR', 'JavaScript', 'GitHub Actions', 'GitHub Pages'],
     liveUrl: 'https://2013tib-droid.github.io/US-MARKET/',
-    repoUrl: `${GH}/US-MARKET`,
     youtube: '',
     screenshots: ['/screenshots/us-market-1.webp'],
   },
@@ -138,7 +132,6 @@ const projects = [
     },
     tech: ['Python', 'JavaScript', 'GitHub Actions', 'GitHub Pages'],
     liveUrl: 'https://2013tib-droid.github.io/Xauusd/',
-    repoUrl: `${GH}/Xauusd`,
     youtube: '',
     screenshots: ['/screenshots/xauusd-1.webp', '/screenshots/xauusd-2.webp'],
   },
@@ -157,7 +150,6 @@ const projects = [
     },
     tech: ['JavaScript', 'PWA', 'Vercel', 'Upstash Redis'],
     liveUrl: 'https://wartungkit.vercel.app/',
-    repoUrl: `${GH}/wartungkit`,
     youtube: '',
     screenshots: ['/screenshots/wartungkit-1.webp'],
   },
@@ -177,7 +169,6 @@ const projects = [
     result: { id: 'Kalender 30 triptych siap pakai untuk jadwal Senin–Rabu–Jumat', en: 'A ready-to-use calendar of 30 triptychs for a Mon–Wed–Fri schedule' },
     tech: ['JavaScript', 'Markdown', 'Python', 'GitHub Actions', 'GitHub Pages'],
     liveUrl: 'https://2013tib-droid.github.io/Sedekahsubuh/',
-    repoUrl: `${GH}/Sedekahsubuh`,
     youtube: '',
     screenshots: ['/screenshots/sedekah-subuh-1.webp', '/screenshots/sedekah-subuh-2.webp'],
   },
@@ -196,7 +187,6 @@ const projects = [
     },
     tech: ['React', 'TypeScript', 'Remotion', 'Azure TTS'],
     liveUrl: '',
-    repoUrl: `${GH}/Video-remotion`,
     youtube: '',
     screenshots: [],
   },
@@ -219,7 +209,6 @@ const projects = [
     },
     tech: ['Next.js', 'Firebase', 'Node.js', 'Python'],
     liveUrl: '',
-    repoUrl: `${GH}/SoalSKD`,
     youtube: '',
     screenshots: [],
   },
@@ -239,7 +228,6 @@ const projects = [
     result: { id: '14 plugin dan 66 skill UI/UX (per 6 Nov 2026)', en: '14 plugins and 66 UI/UX skills (as of 6 Nov 2026)' },
     tech: ['Claude Code', 'Markdown', 'Bash', 'Playwright'],
     liveUrl: '',
-    repoUrl: `${GH}/Agensi`,
     youtube: '',
     screenshots: [],
   },

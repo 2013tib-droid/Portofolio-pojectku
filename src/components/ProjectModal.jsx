@@ -131,18 +131,11 @@ export default function ProjectModal({ project, initialTab, onClose }) {
         </div>
 
         <div className="modal-body">
-          {(hasLive || project.repoUrl) && (
+          {hasLive && (
             <div className="modal-actions">
-              {hasLive && (
-                <a className="btn btn-primary" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                  <Icon name="external" size={16} /> {t.openSite}
-                </a>
-              )}
-              {project.repoUrl && (
-                <a className="btn btn-ghost" href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-                  <Icon name="code" size={16} /> {t.sourceCode}
-                </a>
-              )}
+              <a className="btn btn-primary" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                <Icon name="external" size={16} /> {t.openSite}
+              </a>
             </div>
           )}
           <p className="modal-text">{pick(project.details) || pick(project.summary)}</p>
