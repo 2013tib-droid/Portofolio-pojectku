@@ -44,7 +44,7 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
 - Path dasar (`base`) Vite bisa diatur lewat `BASE_PATH`; default `/` supaya Vercel tetap jalan tanpa diubah
 - Path screenshot lokal otomatis diberi awalan base URL, jadi tetap muncul di sub-folder
 - **Status: sudah online** di https://2013tib-droid.github.io/Portofolio-pojectku/
-- Setiap push ke branch `claude/web-dev-setup-ckqcdc` otomatis ter-deploy
+- Setiap push/merge ke branch `claude/elegant-knuth-d8rmf3` (branch utama) atau `claude/web-dev-setup-ckqcdc` otomatis ter-deploy
 
 #### Pengaturan GitHub yang sudah dilakukan
 | Lokasi | Pengaturan |

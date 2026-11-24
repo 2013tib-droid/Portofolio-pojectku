@@ -3,6 +3,7 @@ name: Deploy ke GitHub Pages
 on:
   push:
     branches:
+      - claude/elegant-knuth-d8rmf3
       - claude/web-dev-setup-ckqcdc
   workflow_dispatch:
 
