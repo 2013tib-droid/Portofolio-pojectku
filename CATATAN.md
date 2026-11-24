@@ -24,7 +24,7 @@ Catatan keputusan dan perubahan yang sudah dibuat, supaya gampang dilanjutkan na
   - **Screenshot**: menunjukkan jumlah gambar
 - Filter: Semua / Website live / Ada video / Screenshot saja
 - Pencarian berdasarkan nama atau teknologi
-- Popup detail: video YouTube, galeri screenshot (bisa digeser, juga pakai tombol panah keyboard), deskripsi lengkap, tech stack, link website & source code
+- Popup detail: video YouTube, galeri screenshot (bisa digeser, juga pakai tombol panah keyboard), deskripsi lengkap, tech stack, link website
 - Link share per project, misalnya `situs-kamu.com/#kasir-online` langsung membuka popup project itu
 - Kalau project tidak punya screenshot, thumbnail kartu diambil dari YouTube
 - Tampilan responsif untuk HP

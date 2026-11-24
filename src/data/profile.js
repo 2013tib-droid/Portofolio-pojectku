@@ -18,13 +18,13 @@ const profile = {
   },
   // Satu atau dua kalimat: bagian mana yang kamu kerjakan dan bukti singkatnya.
   bio: {
-    id: 'Saya menggarap setiap lapisannya, dari antarmuka hingga server dan data. Sebagian besar karya di bawah dapat langsung dicoba, datanya diperbarui secara otomatis, dan kodenya terbuka di GitHub.',
-    en: 'I work across every layer, from interface to server and data. Most of the work below is live, keeps its data fresh automatically, and is open source on GitHub.',
+    id: 'Saya menggarap setiap lapisannya, dari antarmuka hingga server dan data. Sebagian besar karya di bawah dapat langsung dicoba dan datanya diperbarui secara otomatis.',
+    en: 'I work across every layer, from interface to server and data. Most of the work below is live and keeps its data fresh automatically.',
   },
   // Kosongkan ('') link yang tidak dipakai, nanti otomatis tidak ditampilkan.
   links: {
     email: 'kamu@email.com',
-    github: 'https://github.com/2013tib-droid',
+    github: '',
     linkedin: 'https://www.linkedin.com/in/username',
     instagram: '',
   },
